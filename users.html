@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<!-- My CSS -->
+	
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0-alpha3/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap5.min.css">
+
+
+	<link rel="stylesheet" href="shared/styles.css">
+	<link rel="stylesheet" href="users.css">
+	<title>SuperAdmin</title>	
+</head>
+<body>
+
+
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		
+		<div class="head">
+				<div class="logo"><img src="img/logo.png" alt="">
+				</div>
+				<div class="details">
+					<p class="office">NMIS</p>
+					<p class="region">RTOC XI</p>
+				</div>
+		</div>
+		
+		<ul class="side-menu top">
+			<p class="title">Main</p>
+			<li class="">
+				<a href="#">
+					<i class='bx bxs-dashboard' ></i>
+					<span class="text">Dashboard</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx bxs-doughnut-chart' ></i>
+					<span class="text">Analytics</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx bx-current-location'></i>
+					<span class="text">GeoLocation</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx bx-user-plus' ></i>
+					<span class="text">Register Admin Accounts</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx bxs-user-account'></i>
+					<span class="text">Users Management</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx bxs-report'></i>
+					<span class="text">Meat Inspection Reports</span>
+					<i class="bx bxs-chevron-down dropdown-icon"></i>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx bxs-report'></i>
+					<span class="text">MTV Registration Reports</span>
+					<i class="bx bxs-chevron-down dropdown-icon"></i>
+				</a>
+			</li>
+		</ul>
+		<ul class="side-menu bot">
+			<p class="title">Others</p>
+			<li>
+				<a href="#">
+					<i class='bx bxs-cog' ></i>
+					<span class="text">Settings</span>
+				</a>
+			</li>
+			<li>
+				<a href="#" class="logout">
+					<i class='bx bxs-log-out-circle' ></i>
+					<span class="text">Logout</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<!-- SIDEBAR -->
+	
+	
+		<!-- NAVBAR -->
+	<div id="navbar">
+		<nav>
+			<i class='bx bx-menu' ></i>
+			<a href="#" class="nav-link">Categories</a>
+			<form action="#">
+				<div class="form-input">
+					<input type="search" placeholder="Search...">
+					<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
+				</div>
+			</form>
+			<input type="checkbox" id="switch-mode" hidden>
+			<label for="switch-mode" class="switch-mode"></label>
+			
+			
+			
+			<a href="#" class="notification">
+				
+				
+				
+			</a>
+			<div class="dropdown">
+				
+				<a href="#" class="notification dropdown-toggle" id="notificationDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+					 <span class="num" style="position: absolute; margin-right: 20px;" >5</span>
+					<i class='bx bxs-bell' ></i>
+				</a>
+				<div class="dropdown-menu dropdown-menu-right"  style="background-color: var(--light);" aria-labelledby="notificationDropdown">
+				  <a class="dropdown-item" href="#">Something</a>
+				  <a class="dropdown-item" href="#">Something</a>
+				  <a class="dropdown-item" href="#">Something</a>
+				  <a class="dropdown-item" href="#">Something</a>
+				  <a class="dropdown-item" href="#">Something</a>
+				</div>
+			</div>
+
+			<div class="dropdown">
+				<a href="#" class="profile dropdown-toggle" id="profileDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+				  <img src="img/people.png">
+				</a>
+				<div class="dropdown-menu dropdown-menu-right"  style="background-color: var(--light);" aria-labelledby="profileDropdown">
+				  <a class="dropdown-item" href="#">Account Settings</a>
+				  <a class="dropdown-item" href="#">Logout</a>
+				</div>
+			</div>
+			  
+		</nav>
+	</div>
+		<!-- NAVBAR -->
+
+
+	<!-- CONTENT STARTS-->
+	<section id="content">
+		
+		
+		<!-- MAIN STARTS-->
+		<main class="user-management">	
+			<div class="head-title">
+				<div class="left">
+					<h1>Users Management</h1>
+					
+				</div>
+			</div>
+			<div class="table-container">
+				<table id="admin-accounts" class="table table-striped" style="width:100%">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Role</th>
+							<th>Email</th>
+							<th>Phone Number</th>
+							<th>Address</th>
+							<th >Options</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Basuel, Adrianne John</td>
+							<td>MTV Inspection Admin</td>
+							<td>adrianne10160103@gmail.com</td>
+							<td>09336842863</td>
+							<td>Maa, Davao City	</td>
+							<td style="display: flex; flex-wrap: nowrap;">
+								<a type="button" class="btn btn-primary py-1 font-weight-light" data-toggle="modal" data-target="#viewModal">View</a>
+								<a type="button" class="btn btn-warning  mx-1 py-1 font-weight-light" data-toggle="modal" data-target="#editModal">Edit</a>
+								<a type="button" class="btn btn-danger py-1 font-weight-light" data-toggle="modal" data-target="#deleteModal">Delete</a>
+							</td>
+							  
+						</tr>
+						<tr>
+							<td>Arreza, Jess Clarence</td>
+							<td>Meat Inspection Admin</td>
+							<td>jess@gmail.com</td>
+							<td>09322132482</td>
+							<td>Maa, Davao City	</td>
+							<td style="display: flex; flex-wrap: nowrap;">
+								<a type="button" class="btn btn-primary py-1 font-weight-light" data-toggle="modal" data-target="#viewModal">View</a>
+								<a type="button" class="btn btn-warning  mx-1 py-1 font-weight-light" data-toggle="modal" data-target="#editModal">Edit</a>
+								<a type="button" class="btn btn-danger py-1 font-weight-light" data-toggle="modal" data-target="#deleteModal">Delete</a>
+							  </td>
+							  
+						</tr>
+						<tr>
+							<td>Alagon, Gerico</td>
+							<td>Meat Inspection Admin</td>
+							<td>gerico@gmail.com</td>
+							<td>09665522451</td>
+							<td>Matina, Davao City</td>
+							<td style="display: flex; flex-wrap: nowrap;">
+								<a type="button" class="btn btn-primary py-1 font-weight-light" data-toggle="modal" data-target="#viewModal">View</a>
+								<a type="button" class="btn btn-warning  mx-1 py-1 font-weight-light" data-toggle="modal" data-target="#editModal">Edit</a>
+								<a type="button" class="btn btn-danger py-1 font-weight-light" data-toggle="modal" data-target="#deleteModal">Delete</a>
+							  </td>
+							  
+						
+						</tr>
+
+						<!-- View Modal -->
+						<div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="viewModalLabel" aria-hidden="true">
+							<div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+								<h5 class="modal-title" id="viewModalLabel">Account Details</h5>
+								<button type="button" class="close p-2" style="width: 50px;" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+								</div>
+									<div class="modal-body">
+										<!-- Place for Image -->
+
+										<!-- Display all the details here -->
+										<form action="#" class="form">
+											<div class="column">
+												<div class="row Picture" style="width:30%; display: flex;">													
+												<label for="profileImage">Profile Picture</label><br>
+												<img id="profileImage" src="img/adrianne.jpg" alt="Test" style="width:200px;height:200px; margin-left: 50px;">
+												</div>
+
+												<div class="row" style="width: 70%;">
+													<div class="column">
+														<div class="input-box">
+															<label>First Name</label>
+															<input type="text"/>
+														</div>
+														<div class="input-box">
+															<label>Middle Name</label>
+															<input type="text"  />
+														</div>
+														<div class="input-box">
+															<label>Last Name</label>
+															<input type="text" />
+														</div>
+														<div class="input-box">
+															<label>Role</label>
+															<input type="text"  />
+														</div>
+													</div>
+													<div class="column">
+														<div class="input-box">
+															<label>Sex</label>
+															<input type="text" />
+														</div>
+														<div class="input-box">
+															<label>Contact Number</label>
+															<input type="text" />
+														</div>
+														<div class="input-box">
+															<label>Email</label>
+															<input type="text" />
+														</div>
+													</div>
+		
+												</div>
+											</div>
+											
+
+											
+											<div class="column">
+												<div class="input-box">
+													<label>Address</label>
+													<input type="text" />
+												</div>
+												<div class="input-box">
+													<label>Birthdate</label>
+													<input type="text"/>
+												</div>
+											</div>
+											<div class="colum">
+												<div class="row">
+													
+												</div>
+											</div>					
+										</form>
+									</div>
+								<div class="modal-footer">
+								<button type="button" class="btn btn-secondary"  data-dismiss="modal">Close</button>
+								</div>
+							</div>
+							</div>
+						</div>
+  
+						
+						<!-- Edit Modal -->
+						<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+							<div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+								<h5 class="modal-title" id="editModalLabel">Edit Account Details</h5>
+								<button type="button" class="close p-2" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+								</div>
+								<div class="modal-body">
+								<!-- Display all the editable fields here -->
+
+								<form action="#" class="form">
+									<div class="column">
+										<div class="row Picture" style="width:30%; display: flex;">													
+										<label for="profileImage">Profile Picture</label><br>
+										<img id="profileImage" src="img/adrianne.jpg" alt="Test" style="width:200px;height:200px; margin-left: 50px;">
+										</div>
+
+										<div class="row" style="width: 70%;">
+											<div class="column">
+												<div class="input-box">
+													<label>First Name</label>
+													<input type="text"/>
+												</div>
+												<div class="input-box">
+													<label>Middle Name</label>
+													<input type="text"  />
+												</div>
+												<div class="input-box">
+													<label>Last Name</label>
+													<input type="text" />
+												</div>
+											</div>
+											<div class="column">
+												
+												<div class="input-box">
+													<label>Contact Number</label>
+													<input type="text" />
+												</div>
+												<div class="input-box">
+													<label>Email</label>
+													<input type="text" />
+												</div>
+											</div>
+
+										</div>
+									</div>
+									
+
+									
+									<div class="column">
+										
+										<div class="input-box">
+												<label>Birth Date</label>
+												<input type="date" placeholder="" required />
+										</div>
+										<div class="input-box">
+											<label for="">Sex</label>
+											<div class="sex-option">
+												<div class="sex">
+													<input type="radio" style="width: 15px;" id="check-male" name="sex" checked />
+													<label for="check-male" style="margin-top: 10px;" >Male</label>
+												</div>
+												<div class="sex">
+													<input type="radio" style="width: 15px; " id="check-female" name="sex" />
+													<label for="check-female" style="margin-top: 10px;">Female</label>
+												</div>
+											</div>
+										</div>
+										
+									</div>
+									<div class="colum">
+										<div class="row">
+											
+										</div>
+									</div>					
+								</form>
+								</div>
+								<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+								<button type="button" class="btn btn-primary">Save changes</button>
+								</div>
+							</div>
+							</div>
+						</div>
+  
+						<!-- Delete Modal -->
+						<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+							<div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+								<h5 class="modal-title" id="deleteModalLabel">Confirm Delete</h5>
+								<button type="button" class="close p-2" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+								</div>
+								<div class="modal-body">
+								<!-- Display the details here -->
+								<form action="#" class="form">
+									<div class="column">
+										<div class="row Picture" style="width:30%; display: flex;">													
+										<label for="profileImage">Profile Picture</label><br>
+										<img id="profileImage" src="img/adrianne.jpg" alt="Test" style="width:200px;height:200px; margin-left: 50px;">
+										</div>
+
+										<div class="row" style="width: 70%;">
+											<div class="column">
+												<div class="input-box">
+													<label>First Name</label>
+													<input type="text"/>
+												</div>
+												<div class="input-box">
+													<label>Middle Name</label>
+													<input type="text"  />
+												</div>
+												<div class="input-box">
+													<label>Last Name</label>
+													<input type="text" />
+												</div>
+												<div class="input-box">
+													<label>Role</label>
+													<input type="text"  />
+												</div>
+											</div>
+											<div class="column">
+												<div class="input-box">
+													<label>Sex</label>
+													<input type="text" />
+												</div>
+												<div class="input-box">
+													<label>Contact Number</label>
+													<input type="text" />
+												</div>
+												<div class="input-box">
+													<label>Email</label>
+													<input type="text" />
+												</div>
+											</div>
+
+										</div>
+									</div>
+									
+
+									
+									<div class="column">
+										<div class="input-box">
+											<label>Address</label>
+											<input type="text" />
+										</div>
+										<div class="input-box">
+											<label>Birthdate</label>
+											<input type="text"/>
+										</div>
+									</div>
+									<div class="colum">
+										<div class="row">
+											
+										</div>
+									</div>					
+								</form>
+								</div>
+								<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Back to List</button>
+								<button type="button" class="btn btn-danger">Delete</button>
+								</div>
+							</div>
+							</4>
+						</div>
+						
+						
+					</tbody>
+
+				</table>
+			 </div>
+			 
+
+		</main>
+		<!-- MAIN ENDS -->
+
+	</section>
+	<!-- CONTENT ENDS-->
+
+	<!-- Bootstrap for data Tables -->
+	<script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script src="https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap5.min.css"></script>
+	<script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap5.min.js"></script>
+
+		  
+	<!-- CDN For Bootstrap Modal -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+	<script src="shared/scripts.js"></script>
+	<script src="users.js"></script>
+</body>
+</html>

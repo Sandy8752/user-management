@@ -1,0 +1,164 @@
+body{
+	text-size-adjust: initial;
+  font-weight: 50;
+}
+#content main {
+	max-height: 100%;
+}
+
+.user-management .table-container{
+  position: relative;
+  max-width: 1350px;
+  width: 100%;
+  background: #FFF;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  margin-left: 5%;
+  margin-top: 50px ; 
+}
+
+
+/*Responsive*/
+@media screen and (max-width: 1060px){
+  .user-management .table-container{
+    width: 1200px;
+  }
+}
+
+
+
+/* Modal Form CSS */
+
+.user-management .row {
+  width: 100%;
+}
+.user-management .input-box {
+  width: 100%;
+  margin-top: 20px;
+  color: red;
+}
+
+
+
+.user-management .input-box label {
+  color: var(--dark);
+}
+.user-management .input-box input{
+  padding-left: 20px;
+  border-radius: 6px;
+}
+.user-management :where(.input-box input, .select-box, .rol) {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  outline: none;
+  font-size: 1rem;
+  color: #707070;
+  margin-top: 8px;
+  border: 1px solid #ddd;
+  border-radius:0px;
+}
+.user-management .input-box input:focus {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+.user-management .column {
+  display: flex;
+  column-gap: 15px;
+}
+.user-management .roles{
+    width: 100%;
+}
+.user-management .sex-box, .user-management .upload-box  {
+  margin-top: 20px;
+}
+.user-management.sex-box h3, .user-management .upload-box  label{
+  color: var(--dark);
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 21px;
+}
+.user-management :where(.sex-option, .sex) {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  flex-wrap: wrap;
+}
+.user-management .sex {
+  column-gap: 5px;
+}
+.user-management .sex input {
+  accent-color: var(--blue);
+}
+.user-management :where(.sex input, .sex label) {
+  cursor: pointer;
+}
+.user-management .sex label {
+  color: var(--dark);
+}
+/* Upload File Starts */
+
+
+
+    
+/* Upload File Ends */
+
+.user-management .address :where(input, .select-box) {
+  margin-top: 15px;
+}
+
+.user-management .select-box select {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  color: #707070;
+  font-size: 1rem;
+  padding-left: 20px ;
+}
+.user-management #viewModal button  {
+  height: 55px;
+  width: 100%;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 30px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: var(--blue);
+}
+.user-management button:hover {
+  background: rgb(131, 109, 243);
+}
+
+.user-management .table-container{
+  position: relative;
+  max-width: 1350px;
+  width: 100%;
+  background: #FFF;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  margin-left: 5%;
+  margin-top: 50px ; 
+}
+
+/*Responsive*/
+@media screen and (max-width: 1060px){
+  .user-management .table-container{
+    width: 1200px;
+  }
+}
+@media screen and (max-width: 768px) {
+    .user-management .column {
+    flex-wrap: wrap;
+  }
+  .user-management :where(.sex-option, .sex) {
+    row-gap: 15px;
+  }
+  .user-management label{
+    display: block;
+    margin-bottom: 7px;
+  }
+}
